@@ -33,7 +33,6 @@ This project consists in duplicate the behavior of the C function `printf()`. It
 - [Formats](#formats)
 	- [va_list](#va_list)
 	- [Returning an integer](#returning-an-integer)
-- [Auxiliary functions](#auxiliary-functions)
 
 ### Structure
 The main obstacles during the execution of the project have been: handling a variable number of parameters and the function `ft_printf()` returning an `int`.

@@ -28,8 +28,6 @@ This project consists in duplicate the behavior of the C function `printf()`. It
 - hexadecimal `int` type variables (uppercase and lowercase).
 - `pointer` type variables.
 
-You will find more details in the [subject of the project](https://github.com/PublioElio/School-42-printf/blob/main/printf.es.subject.pdf).
-
 ## Index
 - [Structure](#structure)
 - [Formats](#formats)
@@ -46,25 +44,6 @@ To deal with the variable number of parameters entered, the macros `va_list`, `v
 #### Returning an integer
 To handle the integer returned by `ft_printf()`, a pointer is given in the format printing functions. In this way, the function handles the number of characters printed before continuing with the string sent by parameter. Example:
 
-```
-void	ft_putchar_pf(char c, size_t *counter)
-{
-	write(1, &c, 1);
-	(*counter)++; // increasing the pointer with each character printed
-}
-```
-### Formats
-The different types of variables are printed using a function for each of the formats:
-
-* [__`ft_putchar_pf()`__](https://github.com/PublioElio/School-42-printf/blob/main/ft_putchar_pf.c) prints `char` type variables and is called by each of the following functions to print the character strings one by one. Also, it is where the pointer returned by the `ft_printf()` function is incremented.
-* [__`ft_puthex_pf()`__](https://github.com/PublioElio/School-42-printf/blob/main/ft_puthex_pf.c) prints hexadecimal integers,  using a string included in the `ft_printf.h` library. There is one string for uppercase and one for lowercase characters.
-* [__`ft_putnbr_pf()`__](https://github.com/PublioElio/School-42-printf/blob/main/ft_putnbr_pf.c) recursively prints an integer, handling the maximum negative value with a conditional (`if-else`) and casting the integer to characters.
-* [__`ft_putptr_pf()`__](https://github.com/PublioElio/School-42-printf/blob/main/ft_putptr_pf.c) prints a pointer, in hexadecimal format (lowercase), preceded by the string "0x".
-* [__`ft_putstr_pf()`__](https://github.com/PublioElio/School-42-printf/blob/main/ft_putstr_pf.c) prints a `char *` type variable, calling `ft_putchar_pf()` in a `while` loop. It the string is `NULL`, it returns `"(null)"`.
-* [__`ft_putuint_pf()`__](https://github.com/PublioElio/School-42-printf/blob/main/ft_putuint_pf.c) prints an `unsigned int` type variable.
-
-### Auxiliary functions
-[__`ft_aux_pf.c()`__](https://github.com/PublioElio/School-42-printf/blob/main/ft_aux_pf.c) this file contains all the auxiliary functions, specifically the `ft_atoi_base` function, [made during the August pool](https://github.com/PublioElio/School42-Piscina-agosto-2022). This function will be used mainly to change the base in functions that handle hexadecimal numbers and `unsigned int` type variables.
 
 ## Requirements
 The functions are written in __C language__ and need the `gcc` compiler, with `<stdlib.h>`, `<stdarg.h>` and `<unistd.h>` standard libraries to run.
